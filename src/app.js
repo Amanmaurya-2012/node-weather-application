@@ -5,6 +5,7 @@ const hbs = require('hbs')
 const forecast = require('./utils/forecast.js')
 
 const app = express()
+const port = process.env.PORT || 3000
 
 // define path for express config
 const partialspath = path.join(__dirname, '../templates/partials')
@@ -78,6 +79,6 @@ app.get('*', (req,res) => {
 //app.com/help
 //app.com/about
 
-app.listen(3000, () => {
-    console.log('web-server started')
+app.listen(port, () => {
+    console.log('server is up on port' + port)
 })
